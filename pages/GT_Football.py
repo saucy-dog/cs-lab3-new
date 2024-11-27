@@ -92,11 +92,11 @@ def football(team, year_played=1990):
         winner, winStr = GetWinnerWithID(gameID, year_played)
         st.write(winStr)
         st.write(f"{winner} won! To find out more information about this game and many more try out my CFB API LLM.")
-    elif team == "North Carolina":
-        gameID = GetID("Georgia Tech", "North Carolina", year_played)
-        winner, winStr = GetWinnerWithID(gameID, year_played)
-        st.write(winStr)
-        st.write(f"{winner} won! To find out more information about this game and many more try out my CFB API LLM.")
+    #elif team == "North Carolina":
+     #   gameID = GetID("Georgia Tech", "North Carolina", year_played)
+      #  winner, winStr = GetWinnerWithID(gameID, year_played)
+       # st.write(winStr)
+        #st.write(f"{winner} won! To find out more information about this game and many more try out my CFB API LLM.")
     elif team == "Duke":
         gameID = GetID("Georgia Tech", "Duke", year_played)
         winner, winStr = GetWinnerWithID(gameID, year_played)
@@ -107,22 +107,22 @@ def football(team, year_played=1990):
    
 # Pick which GT Rival You Want
 st.sidebar.title("GT Rivals")
-team_choice = st.sidebar.radio("Select a Rival", ["Clemson", "Georgia", "Virginia Tech", "North Carolina", "Duke"])#2nd New Streamlit Method
+team_choice = st.sidebar.radio("Select a Rival", ["Clemson", "Georgia", "Virginia Tech",  "Duke"])#2nd New Streamlit Method
 
 
 
 # Input for year played
 year_played = st.sidebar.number_input("What Year?", min_value=1990, value=1990)#3rd New Streamlit Method
 
-# Display the selected recipe page with serving size and image
+# Display the selected team, with their image & year along with who won and what the score was
 if team_choice == "Clemson":
     football("Clemson", year_played)
 elif team_choice == "Georgia":
     football("Georgia", year_played)
 elif team_choice == "Virginia Tech":
     football("Virginia Tech", year_played)
-elif team_choice == "North Carolina":
-    football("North Carolina", year_played)
+#elif team_choice == "North Carolina":
+ #   football("North Carolina", year_played)
 elif team_choice == "Duke":
     football("Duke", year_played)
 
