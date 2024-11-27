@@ -2,7 +2,7 @@
 #This File will contain the information to be displayed in your portfolio
 
 #CHANGE BELOW
-profile_picture = "Images/try_saucyprofile.JPG"
+profile_picture = "Images/try_saucyprofile.jpg"
 about_me = "I'm Saucy, a 6 year old black lab mix. I enjoy long walks outside, chasing squirrels, and squeaking squeaky toys. "
 
 
