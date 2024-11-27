@@ -6,7 +6,7 @@ import cfbd as cfb #rememebr to write this to there file (so they know to downlo
 
 configuration = cfb.Configuration()
 configuration.api_key["Authorization"] = (
-    st.secrets("CFB_API_KEY")
+    st.secrets["CFB_API_KEY"]
 )
 configuration.api_key_prefix["Authorization"] = "Bearer"
 
