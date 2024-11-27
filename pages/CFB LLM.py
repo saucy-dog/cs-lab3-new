@@ -12,7 +12,7 @@ print(st.secrets["API_KEY"])
 
 
 
-google_api_key = st.secrets("API_KEY")
+google_api_key = st.secrets(["API_KEY"])
 
 
 genai.configure(api_key=google_api_key)
