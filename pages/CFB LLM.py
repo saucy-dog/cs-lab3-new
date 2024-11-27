@@ -2,17 +2,17 @@ import google.generativeai as genai
 import os
 import streamlit as st
 import cfbd as cfb #rememebr to write this to there file (so they know to download)
-from cfbd.rest import ApiException
+#from cfbd.rest import ApiException
 import requests
 
 
 
-genai.configure(api_key=os.environ['API_KEY'])
-print(os.environ['API_KEY'])
+genai.configure(api_key=st.secretsq['API_KEY'])
+print(st.secrets['API_KEY'])
 
 
 
-google_api_key = os.getenv("API_KEY")
+google_api_key = st.secrets("API_KEY")
 
 
 genai.configure(api_key=google_api_key)
@@ -20,7 +20,7 @@ genai.configure(api_key=google_api_key)
 
 configuration = cfb.Configuration()
 configuration.api_key["Authorization"] = (
-    os.getenv("CFB_API_KEY")
+    st.secrets("CFB_API_KEY")
 )
 configuration.api_key_prefix["Authorization"] = "Bearer"
 
@@ -31,14 +31,14 @@ def GetWinnerWithIDForAI(gameID, year):
         "At the end of the output, print \"You listed two teams that didn't play that year. So I made two up!\"")
         return prompt
     year = int(year)
-    try:
-        api_instance = cfb.GamesApi(cfb.ApiClient(configuration)).get_games(
-            id = gameID,
-            year = year,
-            season_type="regular",
+    #try:
+    api_instance = cfb.GamesApi(cfb.ApiClient(configuration)).get_games(
+        id = gameID,
+        year = year,
+        season_type="regular",
         )
-    except ApiException as err:
-        print("Exception when calling Api: %s\n" % err)
+    #except ApiException as err:
+       # print("Exception when calling Api: %s\n" % err)
     if not api_instance:
         return -99
     for items in api_instance:
@@ -116,8 +116,8 @@ def GetPressConference(gameID, year):
             for items in team_2.stats:
                 dictList_2[items.category] = items.stat
 
-    except ApiException as err:
-        print("Exception when calling Api: %s\n" % err)
+    #except ApiException as err:
+     #   print("Exception when calling Api: %s\n" % err)
     prompt = (f"Write a postgame press conference using the football stats given. Team: {team1_name} stats are as follows: Turnovers={dictList_1['turnovers']}, "
               f"Total Yards={dictList_1['totalYards']}",
               f"Points Scored={dictList_1['points']}",

@@ -6,7 +6,7 @@ from cfbd.rest import ApiException
 
 configuration = cfb.Configuration()
 configuration.api_key["Authorization"] = (
-    os.getenv("CFB_API_KEY")
+    st.secrets("CFB_API_KEY")
 )
 configuration.api_key_prefix["Authorization"] = "Bearer"
 
