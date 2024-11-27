@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 import cfbd as cfb #rememebr to write this to there file (so they know to download)
-from cfbd.rest import ApiException
+#from cfbd.rest import ApiException
 
 
 configuration = cfb.Configuration()
@@ -17,14 +17,14 @@ def GetWinnerWithID(gameID, year):
         winnerStr = "These two teams haven't played yet or did not play this season"
         return winner, winnerStr
     year = int(year)
-    try:
-        api_instance = cfb.GamesApi(cfb.ApiClient(configuration)).get_games(
-            id = gameID,
-            year = year,
-            season_type="regular",
+    #try:
+    api_instance = cfb.GamesApi(cfb.ApiClient(configuration)).get_games(
+        id = gameID,
+        year = year,
+        season_type="regular",
         )
-    except ApiException as err:
-        print("Exception when calling Api: %s\n" % err)
+    #except ApiException as err:
+        #print("Exception when calling Api: %s\n" % err)
     if not api_instance:
         return -99
     for items in api_instance:
@@ -53,14 +53,14 @@ def GetWinnerWithID(gameID, year):
 def GetID(inputTeam_1, inputTeam_2, inputYear):
     inputYear= int(inputYear)
     gameID = -99
-    try:
-        api_instance = cfb.GamesApi(cfb.ApiClient(configuration)).get_games(
-            team=inputTeam_1,
-            year=inputYear,
-            season_type="regular",
+    #try:
+    api_instance = cfb.GamesApi(cfb.ApiClient(configuration)).get_games(
+        team=inputTeam_1,
+        year=inputYear,
+        season_type="regular",
         )
-    except ApiException as err:
-        print("Exception when calling Api: %s\n" % err)
+    #except ApiException as err:
+       #print("Exception when calling Api: %s\n" % err)
     if not api_instance:
         return -99
     for items in api_instance:

@@ -7,8 +7,8 @@ import requests
 
 
 
-genai.configure(api_key=st.secrets['API_KEY'])
-print(st.secrets['API_KEY'])
+genai.configure(api_key=st.secrets["API_KEY"])
+print(st.secrets["API_KEY"])
 
 
 
@@ -70,14 +70,14 @@ def GetID(inputTeam_1, inputTeam_2, inputYear):
     gameID = -99
     if inputYear < 1900 or inputYear > 2040:
         return -99
-    try:
-        api_instance = cfb.GamesApi(cfb.ApiClient(configuration)).get_games(
-            team=inputTeam_1,
-            year=inputYear,
-            season_type="regular",
+    #try:
+    api_instance = cfb.GamesApi(cfb.ApiClient(configuration)).get_games(
+        team=inputTeam_1,
+        year=inputYear,
+        season_type="regular",
         )
-    except ApiException as err:
-        print("Exception when calling Api: %s\n" % err)
+    #except ApiException as err:
+        #print("Exception when calling Api: %s\n" % err)
     if not api_instance:
         return -99
     for items in api_instance:
