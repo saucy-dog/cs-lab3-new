@@ -12,7 +12,7 @@ print(st.secrets["API_KEY"])
 
 
 
-google_api_key = st.secrets(["API_KEY"])
+google_api_key = st.secrets["API_KEY"]
 
 
 genai.configure(api_key=google_api_key)
@@ -20,7 +20,7 @@ genai.configure(api_key=google_api_key)
 
 configuration = cfb.Configuration()
 configuration.api_key["Authorization"] = (
-    st.secrets("CFB_API_KEY")
+    st.secrets["CFB_API_KEY"]
 )
 configuration.api_key_prefix["Authorization"] = "Bearer"
 
