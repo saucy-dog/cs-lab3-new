@@ -2,7 +2,7 @@
 #This File will contain the information to be displayed in your portfolio
 
 #CHANGE BELOW
-profile_picture = "Images/buzz_profile1.JPG"
+profile_picture = "Images/buzz_profile1.jpg"
 about_me = "I'm Buzz and I am at least 15 years old. I am a beagle/chihuahua mix and yes, I am named after the GT mascot (NOT Buzz Lighyear). I enjoy lots of cuddles!"
 
 
@@ -33,10 +33,10 @@ course_data = {
 experience_data = {
     
     "Cuddle Design": (["- Found the best most comfiest ways to cuddle.",
-                                                                          "- Increased Energy Reserves by 50%", "- Provided Warmth."],"Images/buzz_cuddle.jpg"),
+                                                                          "- Increased Energy Reserves by 50%", "- Provided Warmth."],"Images/buzz_cuddle.JPG"),
     "Professional Yapper":(["- Yapped to anyone whom would listen.",
                                                            ],"Images/just_buzz.jpg"),
-    "Treat Dispenser":(["- Collected treats from anyone I could find!"],"Images/buzz_wbow.jpg")
+    "Treat Dispenser":(["- Collected treats from anyone I could find!"],"Images/buzz_wbow.JPG")
 
 }
 
