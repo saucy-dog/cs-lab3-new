@@ -95,26 +95,26 @@ def GetPressConference(gameID, year):
         "At the end of the output, print \"You listed two teams that didn't play that year. So I made two up!\"")
         return prompt
     year = int(year)
-    try:
-        api_instance = cfb.GamesApi(cfb.ApiClient(configuration)).get_team_game_stats(
-            game_id = gameID,
-            year = year,
-            season_type="regular",
+    #try:
+    api_instance = cfb.GamesApi(cfb.ApiClient(configuration)).get_team_game_stats(
+        game_id = gameID,
+         year = year,
+        season_type="regular",
         )
-        for items in api_instance:
-            team_1 = items.teams[0]
-            dictList_1['points'] = team_1.points
-            team_2 = items.teams[1]
-            dictList_2['points'] = team_2.points
-            team1_name = team_1.school
-            team2_name = team_2.school
+    for items in api_instance:
+        team_1 = items.teams[0]
+        dictList_1['points'] = team_1.points
+        team_2 = items.teams[1]
+        dictList_2['points'] = team_2.points
+        team1_name = team_1.school
+        team2_name = team_2.school
 
-            for items in team_1.stats:
+        for items in team_1.stats:
 
-                dictList_1[items.category] = items.stat
+            dictList_1[items.category] = items.stat
 
-            for items in team_2.stats:
-                dictList_2[items.category] = items.stat
+        for items in team_2.stats:
+            dictList_2[items.category] = items.stat
 
     #except ApiException as err:
      #   print("Exception when calling Api: %s\n" % err)
