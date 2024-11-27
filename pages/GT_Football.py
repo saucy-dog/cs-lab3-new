@@ -97,17 +97,17 @@ def football(team, year_played=1990):
         winner, winStr = GetWinnerWithID(gameID, year_played)
         st.write(winStr)
         st.write(f"{winner} won! To find out more information about this game and many more try out my CFB API LLM.")
-   # elif team == "Duke":
-    #    gameID = GetID("Georgia Tech", "Duke", year_played)
-     #   winner, winStr = GetWinnerWithID(gameID, year_played)
-      #  st.write(winStr)
-       # st.write(f"{winner} won! To find out more information about this game and many more try out my CFB API LLM.")
+    elif team == "Duke":
+        gameID = GetID("Georgia Tech", "Duke", year_played)
+        winner, winStr = GetWinnerWithID(gameID, year_played)
+        st.write(winStr)
+        st.write(f"{winner} won! To find out more information about this game and many more try out my CFB API LLM.")
     
        
    
 # Pick which GT Rival You Want
 st.sidebar.title("GT Rivals")
-team_choice = st.sidebar.radio("Select a Rival", ["Clemson", "Georgia", "Virginia Tech", "North Carolina"])#2nd New Streamlit Method
+team_choice = st.sidebar.radio("Select a Rival", ["Clemson", "Georgia", "Virginia Tech", "North Carolina", "Duke"])#2nd New Streamlit Method
 
 
 
@@ -123,6 +123,8 @@ elif team_choice == "Virginia Tech":
     football("Virginia Tech", year_played)
 elif team_choice == "North Carolina":
     football("North Carolina", year_played)
+elif team_choice == "Duke":
+    football("Duke", year_played)
 
 
 
