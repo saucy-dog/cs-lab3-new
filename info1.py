@@ -36,7 +36,7 @@ experience_data = {
                                                                           "- Increased Energy Reserves by 50%", "- Provided Warmth."],"Images/buzz_cuddle.jpg"),
     "Professional Yapper":(["- Yapped to anyone whom would listen.",
                                                            ],"Images/just_buzz.jpg"),
-    "Treat Dispenser":(["- Collected treats from anyone I could find."],"Images/buzz_wbow.jpg")
+    "Treat Dispenser":(["- Collected treats from anyone I could find!"],"Images/buzz_wbow.jpg")
 
 }
 
@@ -45,7 +45,7 @@ projects_data = {
 }
 
 programming_data = {
-    "Yapping": 90,
+    "Yapping": 50,
     "Whining": 70,
     "Snoring": 40,
 }
