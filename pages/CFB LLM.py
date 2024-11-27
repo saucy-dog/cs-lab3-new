@@ -133,7 +133,8 @@ def GetPressConference(gameID, year):
     return prompt
 
 
-
+st.title("CFB Game Finder")
+st.subheader("Enter two teams along with the year they played (must be after 2004) and I will provide an AI generated press conference style interview on what happened during the game.")
 team1 = st.text_input("Enter a Team:")
 team2= st.text_input("Enter another Team:")
 year_played = st.number_input("What year did they play?: ", min_value=2004, max_value=2024, value=2004)
@@ -176,7 +177,8 @@ if "chat_session" not in st.session_state:
     st.session_state.chat_session = model.start_chat(history=[])
 
 
-st.title("CFB AI CHatbot")
+st.title("Chatbot")
+st.subheader("Ask me anything.")
 
 
 for message in st.session_state.chat_session.history:
