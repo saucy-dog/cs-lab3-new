@@ -107,7 +107,7 @@ def football(team, year_played=1990):
    
 # Pick which GT Rival You Want
 st.sidebar.title("GT Rivals")
-team_choice = st.sidebar.radio("Select a Rival", ["Clemson", "Georgia", "Virginia Tech", "North Carolina", "Duke"])#2nd New Streamlit Method
+team_choice = st.sidebar.radio("Select a Rival", ["Clemson", "Georgia", "Virginia Tech", "North Carolina"])#2nd New Streamlit Method
 
 
 
