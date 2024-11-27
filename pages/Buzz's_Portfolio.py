@@ -90,5 +90,6 @@ def activities_section(leadership_data, activity_data):
                 expander.write(bullet)
 
     st.write("---")
+    #
 
 activities_section(info1.leadership_data, info1.activity_data)
