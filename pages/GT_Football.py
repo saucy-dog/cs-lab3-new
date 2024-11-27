@@ -97,11 +97,11 @@ def football(team, year_played=1990):
         winner, winStr = GetWinnerWithID(gameID, year_played)
         st.write(winStr)
         st.write(f"{winner} won! To find out more information about this game and many more try out my CFB API LLM.")
-    elif team == "Duke":
-        gameID = GetID("Georgia Tech", "Duke", year_played)
-        winner, winStr = GetWinnerWithID(gameID, year_played)
-        st.write(winStr)
-        st.write(f"{winner} won! To find out more information about this game and many more try out my CFB API LLM.")
+   # elif team == "Duke":
+    #    gameID = GetID("Georgia Tech", "Duke", year_played)
+     #   winner, winStr = GetWinnerWithID(gameID, year_played)
+      #  st.write(winStr)
+       # st.write(f"{winner} won! To find out more information about this game and many more try out my CFB API LLM.")
     
        
    
