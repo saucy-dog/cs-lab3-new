@@ -7,7 +7,7 @@ import requests
 
 
 
-genai.configure(api_key=st.secretsq['API_KEY'])
+genai.configure(api_key=st.secrets['API_KEY'])
 print(st.secrets['API_KEY'])
 
 
